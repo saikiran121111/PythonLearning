@@ -45,3 +45,35 @@ print(fruits) #.clear() is used to clear the dictionary del to delete
 rottenFruits = fruits.copy()
 rottenFruits.update({'rottenMango': 'RottenMango'})
 print(rottenFruits)
+
+rottenFruits2 = dict(fruits)
+#Food way to copy
+print('This is rotten Fruits 2')
+print(rottenFruits2)
+
+#Nested Dictionaries
+
+frontHood = {
+    'Engine': 'engine',
+    'AcComp': 'acComp',
+    'Battery': 'battery',
+}
+backHood = {
+    'BootSpace':'bootSpace',
+    'SpareTyre': 'spareTyre',
+}
+
+car = {
+    'frontHood':frontHood,
+    'backHood':backHood,
+}
+
+#THis is nested dictionary
+print(car)
+
+#This is used for get the objects of specific key in car
+print(car['frontHood'])
+#If we need to filter even more that means I want to print engine only
+print(car['frontHood']['Engine'])
+print(car['frontHood']['AcComp'])
+#in json we use . for going inside her we use square brackets for going inside the value
