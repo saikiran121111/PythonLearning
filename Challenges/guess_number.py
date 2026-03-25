@@ -43,6 +43,8 @@ def guess(name):
             if play_again.lower() == 'y':
                 return guess_game()
             elif play_again.lower() == 'q':
+                print(f'Thank you for playing!')
+                print(f'Bye {name}! 👋')
                 break
             else:
                 print(f'{name} ,Please enter Y for Yes or Q for Quit.')
