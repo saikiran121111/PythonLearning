@@ -15,7 +15,7 @@ print(a,b,c)
 print(x , y , z)
 
 fruits = ['apple', 'banana', 'cherry']
-
+ 
 i,j,k = fruits # Same can be dome for list aswell
 print(i,j,k)
 
