@@ -58,49 +58,61 @@
 # df.rename(columns={'Attempts':'Tries'},inplace=True)
 # df.drop(columns=['Passed'],inplace=True)
 # print(df)
-
+import pandas as pd
 
 ####################################################################################
-print('#####################################################################################')
-
-import pandas as pd
-import numpy as np
-
-data = {
-    'Student': ['Ruku', 'Sai', 'Kiran', 'Arjun', 'Meera'],
-    'Math':    [85, np.nan, 72, 90, np.nan],
-    'Science': [78, 88, np.nan, 95, 70],
-    'City':    ['Hyd', np.nan, 'Hyd', 'Delhi', np.nan]
-}
-df = pd.DataFrame(data)
-
-print(df.isnull().sum())
-
-print()
-df['Math'] = df['Math'].fillna(df['Math'].mean())
-df['Science'] = df['Science'].fillna(df['Science'].median())
-df['City'] = df['City'].fillna('Unknown')
-
-print(df.isnull().sum())
-print(df)
+# print('#####################################################################################')
+#
+# import pandas as pd
+# import numpy as np
+#
+# data = {
+#     'Student': ['Ruku', 'Sai', 'Kiran', 'Arjun', 'Meera'],
+#     'Math':    [85, np.nan, 72, 90, np.nan],
+#     'Science': [78, 88, np.nan, 95, 70],
+#     'City':    ['Hyd', np.nan, 'Hyd', 'Delhi', np.nan]
+# }
+# df = pd.DataFrame(data)
+#
+# print(df.isnull().sum())
+#
+# print()
+# df['Math'] = df['Math'].fillna(df['Math'].mean())
+# df['Science'] = df['Science'].fillna(df['Science'].median())
+# df['City'] = df['City'].fillna('Unknown')
+#
+# print(df.isnull().sum())
+# print(df)
 
 
 print('###############################################################################################')
 
-data = {
-    'Name':     ['Ruku','Sai','Kiran','Arjun','Meera','Dev'],
-    'Dept':     ['IT','HR','IT','Finance','HR','Finance'],
-    'City':     ['Hyd','Delhi','Hyd','Mumbai','Delhi','Mumbai'],
-    'Salary':   [70000, 50000, 65000, 80000, 55000, 90000],
-    'Score':    [88, 72, 91, 68, 85, 79]
-}
-df = pd.DataFrame(data)
+# data = {
+#     'Name':     ['Ruku','Sai','Kiran','Arjun','Meera','Dev'],
+#     'Dept':     ['IT','HR','IT','Finance','HR','Finance'],
+#     'City':     ['Hyd','Delhi','Hyd','Mumbai','Delhi','Mumbai'],
+#     'Salary':   [70000, 50000, 65000, 80000, 55000, 90000],
+#     'Score':    [88, 72, 91, 68, 85, 79]
+# }
+# df = pd.DataFrame(data)
+#
+# print(df.groupby('Dept')['Salary'].mean())
+# print(df.groupby('Dept')['Score'].agg(['max','min']))
+# print(df.groupby(['Dept','City'])['Salary'].mean())
+#
+# result =  df.groupby('Dept')['Salary'].mean().reset_index()
+#
+# result = result.sort_values('Salary',ascending=False)
+# print(result)
 
-print(df.groupby('Dept')['Salary'].mean())
-print(df.groupby('Dept')['Score'].agg(['max','min']))
-print(df.groupby(['Dept','City'])['Salary'].mean())
 
-result =  df.groupby('Dept')['Salary'].mean().reset_index()
+print('###############################################################################################')
 
-result = result.sort_values('Salary',ascending=False)
-print(result)
+
+df = pd.read_csv('Book1.csv')
+
+print(df.head())
+#print(df.info())
+print(df.shape)
+print(df.loc[df['City']=='Delhi'])
+print(df.groupby('City')['Marks'].mean())
