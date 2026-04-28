@@ -1,0 +1,2 @@
+Day 1: Started Python
+Day 2: Learned file operations
